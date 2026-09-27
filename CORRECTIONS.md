@@ -12,8 +12,8 @@ following internal review. It documents what changed and why.
 ## Latest Version
 
 **v3.0** (published as Zenodo v4 record) — 2026-09-27
-- **Version DOI:** `10.5281/zenodo.23000742`
-- **URL:** https://zenodo.org/records/23000742
+- **Version DOI:** `10.5281/zenodo.23002131`
+- **URL:** https://zenodo.org/records/23002131
 - **Concept DOI:** `10.5281/zenodo.22998311` (always resolves to latest)
 
 ---
@@ -115,15 +115,15 @@ research project rather than a completed result:
 
 - **v1.0** — 2026-09-27 — Initial preprint on Zenodo (DOI: 10.5281/zenodo.22998311)
 - **v3.0** — 2026-09-27 — Complete internal consistency revision
-  - Zenodo Version DOI: `10.5281/zenodo.23000742`
-  - Zenodo Record: https://zenodo.org/records/23000742
+  - Zenodo Version DOI: `10.5281/zenodo.23002131`
+  - Zenodo Record: https://zenodo.org/records/23002131
   - Abstract: 'empirically evaluate associated predictions'
   - Section 4 renamed results to match classification
   - Removed residual 'never forget' and 'zero-forgetting proven' language
   - T5 notation: '0 < η_e λ_e < 2'
 - **v2.0** — 2026-09-27 — Corrections to title, terminology, classification
-  - Zenodo Version DOI: `10.5281/zenodo.23000448`
-  - Zenodo Record: https://zenodo.org/records/23000448
+  - Zenodo Version DOI: `10.5281/zenodo.23002131`
+  - Zenodo Record: https://zenodo.org/records/23002131
   - Concept DOI: `10.5281/zenodo.22998311`
 
 ---

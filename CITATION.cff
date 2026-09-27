@@ -18,8 +18,8 @@ identifiers:
     value: "10.5281/zenodo.22998311"
     description: "Concept DOI (always resolves to latest version)"
   - type: doi
-    value: "10.5281/zenodo.23000742"
-    description: "Latest version DOI (v4.0, Bounded Forgetting, complete internal consistency)"
+    value: "10.5281/zenodo.23002131"
+    description: "Latest version DOI (v6.0, Bounded Forgetting, complete internal consistency)"
 abstract: >-
   We present Berna R5, a language model architecture in which knowledge is
   stored in dynamic weighted cells that are born, split, and interconnect
