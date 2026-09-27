@@ -2,10 +2,19 @@
 
 **DOI:** 10.5281/zenodo.22998311 (unchanged)
 **Date:** 2026-09-27
-**Version:** v2.0
+**Version:** v3.0
 
 This document records the corrections applied to the Berna R5 paper
 following internal review. It documents what changed and why.
+
+---
+
+## Latest Version
+
+**v3.0** (published as Zenodo v4 record) — 2026-09-27
+- **Version DOI:** `10.5281/zenodo.23000742`
+- **URL:** https://zenodo.org/records/23000742
+- **Concept DOI:** `10.5281/zenodo.22998311` (always resolves to latest)
 
 ---
 
