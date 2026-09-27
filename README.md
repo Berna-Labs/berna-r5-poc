@@ -7,6 +7,7 @@ Self-Correcting Language Models with Bounded Forgetting**
 [![Latest](https://img.shields.io/badge/Zenodo-v4.0-blue)](https://zenodo.org/records/23000742)
 [![License: Berna Research](https://img.shields.io/badge/License-Berna%20Research%20v1.0-blue.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-155%20passed-brightgreen.svg)]()
+[![ORCID](https://img.shields.io/badge/ORCID-0009-0002-5866-8815-A6CE39?logo=orcid)](https://orcid.org/0009-0002-5866-8815)
 
 ## What is Berna R5?
 
