@@ -45,15 +45,15 @@ with Bounded Forgetting}}
 We present Berna R5, a language model architecture in which
 knowledge is stored in dynamic weighted cells that are born,
 split, and interconnect according to a 6-dimensional
-knowledge-saturation manifold. Unlike Mixture-of-Experts, our
+knowledge state space. Unlike Mixture-of-Experts, our
 cells are not fixed at initialization; they grow in response
 to knowledge saturation and interconnect via a co-activation
-plexus. We present two mathematical theorems (plexus connectivity convergence and balanced growth equilibrium), two design invariants (transactional incorporation and protected retention), and two empirical hypotheses (saturation-triggered splitting and zero-forgetting on continual tasks). We empirically evaluate the associated predictions on a
+plexus. We present two mathematical theorems (plexus connectivity convergence and balanced growth equilibrium), two design invariants (transactional incorporation and protected retention), and two empirical hypotheses (saturation-triggered splitting and bounded forgetting on continual tasks). We empirically evaluate the associated predictions on a
 50M-parameter Proof-of-Concept trained on 800M tokens,
 comparing against Transformer, MoE, EWC, and PackNet
-baselines. Berna R5 achieves competitive loss while reducing
-forgetting by five orders of magnitude. The architecture is
-open-source, reproducible, and hardware-adaptive from 8~GB
+baselines. In our PoC, Berna R5 achieves competitive loss while
+showing reduced forgetting under the tested protocol. The architecture is
+open-source, reproducible, and hardware-adaptive from 8 GB
 VRAM upward.
 \end{abstract}
 
