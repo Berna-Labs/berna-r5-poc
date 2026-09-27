@@ -1,0 +1,17 @@
+# Core
+torch>=2.0.0
+numpy>=1.24.0
+
+# Utilities
+safetensors>=0.4.0
+tqdm>=4.65.0
+
+# For future full-scale training
+transformers>=4.35.0
+datasets>=2.14.0
+tokenizers>=0.15.0
+
+# HuggingFace upload
+huggingface-hub>=0.20.0
+
+# Note: bitsandbytes and torchao are optional (see docs/03_deployment.md)

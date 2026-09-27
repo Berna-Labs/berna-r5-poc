@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "berna-r5"
+version = "0.1.0"
+description = "DNA-Kernel Plexus: A Bio-Inspired Architecture for Growing, Self-Correcting Language Models"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Berna Research License v1.0"}
+authors = [{name = "Berna Labs"}]
+keywords = ["llm", "continual-learning", "mixture-of-experts", "bio-inspired", "zero-forgetting"]
+
+dependencies = [
+    "torch>=2.0.0",
+    "numpy>=1.24.0",
+    "safetensors>=0.4.0",
+    "tqdm>=4.65.0",
+]
+
+[project.optional-dependencies]
+train = ["transformers>=4.35.0", "datasets>=2.14.0", "tokenizers>=0.15.0"]
+upload = ["huggingface-hub>=0.20.0"]
+dev = ["pytest>=7.0.0", "black>=23.0.0", "ruff>=0.1.0"]
+
+[project.urls]
+Homepage = "https://github.com/berna-labs/berna-r5"
+Paper = "https://arxiv.org/abs/xxxx.xxxxx"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-q"

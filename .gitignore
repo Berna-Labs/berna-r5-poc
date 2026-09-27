@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# PyTorch
+*.pt
+*.pth
+*.ckpt
+
+# Data
+*.npy
+*.npz
+*.bin
+*.safetensors
+
+# Registry DB (keep schema, ignore data)
+registry/*.db
+registry/*.db-journal
+
+# Logs
+*.log
+logs/
+
+# Checkpoints
+checkpoints/
+checkpoints_*/
+
+# Experiments results (keep plan, ignore outputs)
+experiments/results/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.key
+secrets/
+.hf_repo
