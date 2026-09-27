@@ -98,6 +98,41 @@ not a mathematical claim. See docs/fail_closed_integrity.md.
 - Paper: paper/00_outline.md through paper/06_*.md
 - Experiments: experiments/00_plan.md
 
+
+
+## Experiments in Design
+
+Three major experiments are designed but pending GPU availability
+(currently occupied by the R4 training run):
+
+### 1. Ablation Study (`experiments/ablation/`)
+- **Purpose:** Isolate causal contribution of each component
+  (Growth, Cells, Plexus, DNA, Transactional).
+- **Variants:** 6 (V0 Vanilla to V4 Full R5)
+- **Phases:** 4 (single-task, sequential, transfer, causal-cell)
+- **Compute:** 36 GPU-hours (~4 days)
+- **Status:** Design complete, awaiting GPU.
+
+### 2. Continual Learning Benchmark (`experiments/cl_bench/`)
+- **Purpose:** Validate H1 (saturation-triggered splitting) and
+  H2 (bounded forgetting) on 8 domains in 4 stages.
+- **Domains:** WikiText, Math, Python, Rust, PubMed, Physics,
+  Arabic, Chinese.
+- **Baselines:** Vanilla, EWC, PackNet, MoE.
+- **Compute:** 58 GPU-hours (~8 days)
+- **Status:** Design complete, awaiting GPU.
+
+### 3. Causal Cell Activation (`experiments/causal_cells/`)
+- **Purpose:** Prove cells are computational units, not metadata.
+- **Tests:** Ablation causality, activation correlation, gradient
+  causality.
+- **Success criteria:** Diagonal delta > 5%, off-diagonal < 1%,
+  domain selectivity > 5x.
+- **Compute:** 5 GPU-hours (~2 days)
+- **Status:** Design complete, awaiting GPU.
+
+Full designs in respective `00_design.md` files.
+
 ## What Berna R5 Does NOT Claim
 
 - SOTA on any benchmark.
