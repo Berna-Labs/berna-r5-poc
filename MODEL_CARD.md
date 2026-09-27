@@ -15,6 +15,8 @@ license_link: LICENSE
 library_name: pytorch
 ---
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22998311.svg)](https://doi.org/10.5281/zenodo.22998311)
+
 # Berna R5
 
 **DNA-Kernel Plexus: A Bio-Inspired Architecture for Growing,
@@ -105,14 +107,20 @@ not a mathematical claim.
 
 ## Citation
 
-    @article{berna2026r5,
+If you use Berna R5 in your research, please cite:
+
+    @misc{muhammed2026berna,
       title={DNA-Kernel Plexus: A Bio-Inspired Architecture for
              Growing, Self-Correcting Language Models with
              Proven Zero-Forgetting},
-      author={Berna Labs},
-      journal={arXiv preprint},
-      year={2026}
+      author={Muhammed, Mohammed Kamil},
+      year={2026},
+      publisher={Zenodo},
+      doi={10.5281/zenodo.22998311},
+      url={https://doi.org/10.5281/zenodo.22998311}
     }
+
+**DOI:** [10.5281/zenodo.22998311](https://doi.org/10.5281/zenodo.22998311)
 
 ## Links
 

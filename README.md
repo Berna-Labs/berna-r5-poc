@@ -3,6 +3,10 @@
 **DNA-Kernel Plexus: A Bio-Inspired Architecture for Growing,
 Self-Correcting Language Models with Proven Zero-Forgetting**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22998311.svg)](https://doi.org/10.5281/zenodo.22998311)
+[![License: Berna Research](https://img.shields.io/badge/License-Berna%20Research%20v1.0-blue.svg)](LICENSE)
+[![Tests](https://img.shields.io/badge/tests-155%20passed-brightgreen.svg)]()
+
 ## What is Berna R5?
 
 Berna R5 is a language model architecture in which knowledge
