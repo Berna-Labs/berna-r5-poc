@@ -18,6 +18,8 @@
 \newtheorem{definition}{Definition}
 \newtheorem{axiom}{Axiom}
 \newtheorem{property}{Property}
+\newtheorem{invariant}{Invariant}
+\newtheorem{hypothesis}{Hypothesis}
 
 % ===== Code listing style =====
 
@@ -46,7 +48,7 @@ split, and interconnect according to a 6-dimensional
 knowledge-saturation manifold. Unlike Mixture-of-Experts, our
 cells are not fixed at initialization; they grow in response
 to knowledge saturation and interconnect via a co-activation
-plexus. We present two mathematical theorems (plexus connectivity convergence and balanced growth equilibrium), two design invariants (transactional incorporation and protected retention), and two empirical hypotheses (saturation-triggered splitting and zero-forgetting on continual tasks). We validate each theorem empirically on a
+plexus. We present two mathematical theorems (plexus connectivity convergence and balanced growth equilibrium), two design invariants (transactional incorporation and protected retention), and two empirical hypotheses (saturation-triggered splitting and zero-forgetting on continual tasks). We empirically evaluate the associated predictions on a
 50M-parameter Proof-of-Concept trained on 800M tokens,
 comparing against Transformer, MoE, EWC, and PackNet
 baselines. Berna R5 achieves competitive loss while reducing
@@ -280,9 +282,9 @@ There are no silent failures.
 
 We present results in three categories: two mathematical theorems (full proofs), two design invariants (enforced by system design), and one proposition plus two empirical hypotheses. Complete proofs and design rationale appear in the supplementary material \cite{berna2026proofs}.
 
-\subsection{Theorem 1: Saturation Equilibrium (6D)}
+\subsection{Empirical Hypothesis 1: Saturation-Triggered Splitting}
 
-\begin{theorem}[Saturation Equilibrium]
+\begin{hypothesis}[Saturation-Triggered Splitting]
 Let $K(t) \in [0,1]^6$ be the 6D knowledge vector of a cell $c$.
 Let $\omega(t)$ be the adaptive weight vector in the simplex.
 Define $S(c,t) = \|K(c,t)\|_\omega$. Under L-smoothness,
@@ -300,9 +302,9 @@ there exists $S^* \in (0,1)$ such that:
 \textbf{Constant:} $S^* = 0.85$. \textbf{Key lemma:} each
 dimension converges at rate $O(1/\sqrt{t})$.
 
-\subsection{Theorem 2: Reliable Incorporation}
+\subsection{Design Invariant 1: Transactional Incorporation}
 
-\begin{theorem}[Reliable Incorporation]
+\begin{invariant}[Transactional Incorporation]
 Let $B$ be a base model with $K_{6D}(B,t)$. Let $s_i$ be a
 specialist returning answer $a$ with confidence $c_i \geq
 \tau_{\text{conf}}$. Under the verification gate (logical +
@@ -316,9 +318,9 @@ consistency + 6D checks), incorporating $(r,a)$ into $B$:
 \end{itemize}
 \end{theorem}
 
-\subsection{Theorem 3: Zero-Forgetting}
+\subsection{Empirical Hypothesis 2: Bounded Forgetting}
 
-\begin{theorem}[Zero-Forgetting]
+\begin{hypothesis}[Bounded Forgetting]
 Let $\mathcal{T} = \{T_1,\ldots,T_M\}$ be a fixed task set.
 Define $F_j(t) = \max_{s \leq t} P_j(s) - P_j(t)$. Under cell
 isolation, transactional incorporation, persistent registry log,
@@ -328,9 +330,9 @@ F_j(t) \leq \epsilon_{\text{neg}} = 10^{-6}.
 \]
 \end{theorem}
 
-\subsection{Theorem 4: Balanced Growth}
+\subsection{Mathematical Theorem 2: Balanced Growth Equilibrium}
 
-\begin{theorem}[Balanced Growth]
+\begin{theorem}[Balanced Growth Equilibrium]
 Let $g = (\text{parent}, d_1, d_2)$ be a split. Define
 $V(g) = \text{benefit}(g) - \text{cost}(g)$. Under necessity
 ($V > 0$), capacity ($\sum \text{footprint} \leq C$), and
@@ -341,12 +343,11 @@ $N^*$ satisfying all three constraints.
 
 \textbf{Constant:} $\tau_{\text{div}} = 0.3$.
 
-\subsection{Theorem 5: Plexus Connectivity}
+\subsection{Mathematical Theorem 1: Plexus Connectivity Convergence}
 
-\begin{theorem}[Plexus Convergence]
+\begin{theorem}[Plexus Connectivity Convergence]
 For each edge $e$, $W_e(t+1) = W_e(t) + \eta_e (A_e(t) -
-\lambda_e W_e(t))$. Under stationary $A_e(t)$, $\eta_e <
-2/\lambda_{\max}$, and $\lambda_e > 0$, $W$ converges
+\lambda_e W_e(t))$. Under stationary $A_e(t)$ and $0 < \eta_e \lambda_e < 2$, $W$ converges
 exponentially to $W^*_e = A^*_e / \lambda_e$.
 \end{theorem}
 
@@ -386,11 +387,11 @@ seed 42.
 
 \subsection{Experiment 1: Saturation Dynamics}
 \textbf{Result:} final $S = 0.9030$, $|S - S^*| = 0.0530$,
-converged: True. Validates Theorem 1.
+converged: True. Supports Hypothesis 1 under the tested configuration.
 
 \subsection{Experiment 2: Splitting Behavior}
 \textbf{Result:} initial cells 5, final cells 19, splits 7,
-capacity respected: True. Validates Theorem 4.
+capacity respected: True. Supports the balanced-growth mechanism under the tested capacity and diversity constraints.
 
 \subsection{Experiment 3: Incorporation}
 \textbf{Result:} 100 incorporations, min $\Delta K_E = +0.020$,
@@ -399,7 +400,7 @@ Theorem 2.
 
 \subsection{Experiment 4: Zero-Forgetting}
 \textbf{Result:} max forgetting $= 0.0$, threshold $10^{-6}$,
-zero-forgetting ok: True. Validates Theorem 3.
+zero-forgetting ok: True. Supports the bounded-forgetting hypothesis under the tested protocol.
 
 \subsection{Experiment 5: Baselines}
 \textbf{Result:} PoC converges from loss 7.08 to 7.07 over
@@ -407,7 +408,7 @@ zero-forgetting ok: True. Validates Theorem 3.
 
 \subsection{Experiment 6: Plexus Dynamics}
 \textbf{Result:} 10 nodes, initial $\sim$27 edges, max weight
-1.0, converged: True. Validates Theorem 5.
+1.0, converged: True. Supports the connectivity convergence theorem.
 
 \subsection{Summary}
 
@@ -472,7 +473,7 @@ None observed in the PoC.
 \label{sec:concl}
 
 We presented Berna R5, an architecture for language models
-that grow, correct locally, and never forget. Grounded in
+that grow, correct locally, and bound forgetting under the tested protocol. Grounded in
 two theorems with complete proofs, two design invariants, and three empirical claims, validated on a
 50M-parameter PoC across seven experiments.
 
@@ -512,7 +513,7 @@ Optimality of any design choice. Completeness of any proof
 \textbf{What this paper DOES claim.} A novel architecture
 combining five proven mechanisms. Five theorems with explicit
 proofs and constants. Seven reproducible experiments on one
-GPU. Zero-forgetting proven and empirically validated at
+GPU. Bounded forgetting observed and empirically validated at
 small scale. Open-source, hardware-adaptive. Falsifiability:
 any theorem can be refuted by a single counterexample.
 

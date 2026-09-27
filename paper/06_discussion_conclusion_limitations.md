@@ -94,7 +94,7 @@ Those claims are deferred to future work.
 # 7. Conclusion
 
 We presented Berna R5, an architecture for language models
-that grow, correct locally, and never forget. The
+that grow, correct locally, and bound forgetting under the tested protocol. The
 architecture is grounded in two theorems with complete proofs, two design invariants, and empirical hypotheses
 proofs, and validated on a 50M-parameter PoC across seven
 experiments.
@@ -215,7 +215,7 @@ interruptions. Real power-loss recovery is future work.
 - A novel architecture combining five proven mechanisms.
 - Five theorems with explicit proofs and constants.
 - Seven reproducible experiments on 1 GPU.
-- Zero-forgetting proven and empirically validated at
+- Bounded forgetting observed and empirically validated at
   small scale.
 - Open-source code, configs, and registry.
 - Falsifiability: any theorem can be refuted by a single

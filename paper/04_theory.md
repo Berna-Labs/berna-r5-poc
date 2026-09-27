@@ -10,7 +10,7 @@ We present results in three categories:
 This classification is conservative. Not every result is a
 theorem in the strict mathematical sense.
 
-## 4.1 Theorem 1: Saturation Equilibrium (6D)
+## 4.1 Hypothesis 1: Saturation-Triggered Splitting Equilibrium (6D)
 
 **Statement.** Let K(t) in [0,1]^6 be the 6D knowledge vector
 of a cell c. Let omega(t) be the adaptive weight vector in
@@ -35,7 +35,7 @@ dimensions are balanced and no further gradient signal points
 toward improvement. Splitting at this point doubles capacity
 along the dominant dimension.
 
-## 4.2 Theorem 2: Reliable Incorporation
+## 4.2 Invariant 1: Transactional Incorporation
 
 **Statement.** Let B be a base model with K_6D(B, t). Let s_i
 be a specialist returning answer a with confidence c_i >=
@@ -57,7 +57,7 @@ specialists cannot change.
 passes all four verification checks and is integrated, or it
 is rejected and queued as a gap. There is no partial state.
 
-## 4.3 Theorem 3: Zero-Forgetting
+## 4.3 Hypothesis 2: Bounded Forgetting
 
 **Statement.** Let T = {T_1, ..., T_M} be a fixed task set.
 Define F_j(t) = max_{s <= t} P_j(s) - P_j(t). Under:
@@ -78,7 +78,7 @@ in immutable cells. Learning new tasks creates new cells,
 not modifying old ones. This is the strongest form of
 continual learning.
 
-## 4.4 Theorem 4: Balanced Growth
+## 4.4 Theorem 2: Balanced Growth Equilibrium
 
 **Statement.** Let g = (parent, d1, d2) be a split. Define
 V(g) = benefit(g) - cost(g). Under:
@@ -102,7 +102,7 @@ explode. Balanced growth uses three filters: necessity
 (benefit > cost), capacity (fits in VRAM), diversity
 (daughters differ meaningfully).
 
-## 4.5 Theorem 5: Plexus Connectivity Convergence
+## 4.5 Theorem 1: Plexus Connectivity Convergence Connectivity Convergence
 
 **Statement.** For each edge e, weight evolves as:
 W_e(t+1) = W_e(t) + eta_e * (A_e(t) - lambda_e * W_e(t)).

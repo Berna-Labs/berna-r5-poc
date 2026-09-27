@@ -20,7 +20,7 @@ plexus. We present: (1) saturation equilibrium in
 6D knowledge state space; (2) reliable mutation via federation
 incorporation; (3) zero-forgetting (F_j <= 1e-6); (4) balanced
 growth equilibrium; (5) plexus connectivity convergence.
-We validate each theorem empirically on a 50M-parameter PoC
+We empirically evaluate the associated predictions on a 50M-parameter PoC
 trained on 800M tokens, comparing against Transformer, MoE,
 EWC, and PackNet baselines. Berna R5 achieves competitive
 loss while reducing forgetting by 5 orders of magnitude.
@@ -52,11 +52,11 @@ loss while reducing forgetting by 5 orders of magnitude.
 - 3.7 Hardware-Adaptive Deployment
 
 ### 4. Theory (2.5 pages)
-- 4.1 Theorem 1: Saturation Equilibrium (6D)
-- 4.2 Theorem 2: Reliable Incorporation
-- 4.3 Theorem 3: Zero-Forgetting
-- 4.4 Theorem 4: Balanced Growth
-- 4.5 Theorem 5: Plexus Connectivity
+- 4.1 Hypothesis 1: Saturation-Triggered Splitting Equilibrium (6D)
+- 4.2 Invariant 1: Transactional Incorporation
+- 4.3 Hypothesis 2: Bounded Forgetting
+- 4.4 Theorem 2: Balanced Growth Equilibrium
+- 4.5 Theorem 1: Plexus Connectivity Convergence Connectivity
 
 ### 5. Experiments (2 pages)
 - 5.1 Setup: 50M params, 800M tokens, 1x RTX 5090
@@ -126,5 +126,5 @@ loss while reducing forgetting by 5 orders of magnitude.
 - Novel architecture combining 5 proven mechanisms
 - 5 theorems with explicit proofs and constants
 - 7 reproducible experiments on 1 GPU
-- Zero-forgetting proven and validated
+- Bounded forgetting observed and validated
 - Open-source, hardware-adaptive

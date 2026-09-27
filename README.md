@@ -109,7 +109,7 @@ not a mathematical claim. See docs/fail_closed_integrity.md.
 - Novel architecture combining 5 proven mechanisms.
 - 5 theorems with explicit proofs and constants.
 - 7 reproducible experiments.
-- Zero-forgetting proven and empirically validated.
+- Bounded forgetting observed and empirically validated.
 - Open source, hardware-adaptive.
 
 ## Citation
