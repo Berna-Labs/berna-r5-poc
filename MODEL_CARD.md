@@ -16,7 +16,7 @@ library_name: pytorch
 ---
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22998311.svg)](https://doi.org/10.5281/zenodo.22998311)
-[![v2.0](https://img.shields.io/badge/Zenodo-v2.0-blue)](https://zenodo.org/records/23000448)
+[![Latest](https://img.shields.io/badge/Zenodo-v4.0-blue)](https://zenodo.org/records/23000742)
 
 # Berna R5
 
