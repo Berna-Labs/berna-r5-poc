@@ -52,3 +52,11 @@ Thumbs.db
 *.key
 secrets/
 .hf_repo
+
+# arXiv build artifacts
+paper/arxiv/*.aux
+paper/arxiv/*.log
+paper/arxiv/*.out
+paper/arxiv/*.toc
+paper/arxiv/berna-r5-arxiv.tar.gz
+paper/arxiv/final/
