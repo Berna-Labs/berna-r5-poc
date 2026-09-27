@@ -106,6 +106,9 @@ research project rather than a completed result:
 
 - **v1.0** — 2026-09-27 — Initial preprint on Zenodo (DOI: 10.5281/zenodo.22998311)
 - **v2.0** — 2026-09-27 — Corrections to title, terminology, classification
+  - Zenodo Version DOI: `10.5281/zenodo.23000448`
+  - Zenodo Record: https://zenodo.org/records/23000448
+  - Concept DOI: `10.5281/zenodo.22998311`
 
 ---
 

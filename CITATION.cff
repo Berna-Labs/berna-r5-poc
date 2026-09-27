@@ -15,7 +15,10 @@ repository-code: "https://github.com/Berna-Labs/berna-r5-poc"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.22998311"
-    description: "Zenodo DOI for Berna R5 preprint v1.0"
+    description: "Concept DOI (always resolves to latest version)"
+  - type: doi
+    value: "10.5281/zenodo.23000448"
+    description: "Version DOI for v2.0 (Bounded Forgetting)"
 abstract: >-
   We present Berna R5, a language model architecture in which knowledge is
   stored in dynamic weighted cells that are born, split, and interconnect
