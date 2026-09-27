@@ -104,7 +104,7 @@ information-theoretically (see
 `theory/justification_100_chromosomes.md`), but ablation
 studies are needed to confirm.
 
-### 1.4 The Zero-Error Creed
+### 1.4 The Fail-Closed Integrity Invariant
 
 A central design principle of Berna R5 is the Zero-Error
 Invariant: any violation of a declared invariant triggers
@@ -125,7 +125,7 @@ reproducible, and falsifiable.
 
 Section 2 reviews related work in MoE, continual learning,
 NAS, and retrieval. Section 3 describes the architecture.
-Section 4 states the five theorems. Section 5 presents
+Section 4 presents the theoretical results. Section 5 presents
 the seven experiments. Section 6 discusses findings.
 Section 7 concludes. Section 8 documents limitations.
 

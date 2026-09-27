@@ -2,7 +2,7 @@
 
 ## Title
 **DNA-Kernel Plexus: A Bio-Inspired Architecture for Growing,
-Self-Correcting Language Models with Proven Zero-Forgetting**
+Self-Correcting Language Models with Bounded Forgetting**
 
 ## Target Venues
 - Primary: NeurIPS 2027
@@ -16,8 +16,8 @@ split, and interconnect according to a 6-dimensional
 knowledge-saturation manifold. Unlike Mixture-of-Experts, our
 cells are not fixed at initialization; they grow in response
 to knowledge saturation and interconnect via a co-activation
-plexus. We prove five theorems: (1) saturation equilibrium in
-6D manifold space; (2) reliable mutation via federation
+plexus. We present: (1) saturation equilibrium in
+6D knowledge state space; (2) reliable mutation via federation
 incorporation; (3) zero-forgetting (F_j <= 1e-6); (4) balanced
 growth equilibrium; (5) plexus connectivity convergence.
 We validate each theorem empirically on a 50M-parameter PoC
@@ -85,7 +85,7 @@ loss while reducing forgetting by 5 orders of magnitude.
 | Fig | Description |
 |---|---|
 | 1 | Architecture overview |
-| 2 | 6D manifold visualization |
+| 2 | 6D knowledge state space visualization |
 | 3 | Saturation curves S(t) |
 | 4 | Growth over time N(t) |
 | 5 | Loss curves vs baselines |

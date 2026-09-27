@@ -201,7 +201,7 @@ Every layer enforces the Zero-Error Invariant:
 - Registry: foreign keys enforced, append-only log
 
 Any violation triggers FAIL_CLOSED. This is a runtime
-guarantee, not a mathematical claim (see zero_error_creed.md).
+guarantee, not a mathematical claim (see fail_closed_integrity.md).
 
 ## 3.10 What This Architecture Is Not
 

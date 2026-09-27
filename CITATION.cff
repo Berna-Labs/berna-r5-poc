@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use Berna R5 in your research, please cite the following."
-title: "DNA-Kernel Plexus: A Bio-Inspired Architecture for Growing, Self-Correcting Language Models with Proven Zero-Forgetting"
+title: "DNA-Kernel Plexus: A Bio-Inspired Architecture for Growing, Self-Correcting Language Models with Bounded Forgetting"
 type: software
 authors:
   - family-names: Muhammed
@@ -19,7 +19,7 @@ identifiers:
 abstract: >-
   We present Berna R5, a language model architecture in which knowledge is
   stored in dynamic weighted cells that are born, split, and interconnect
-  according to a 6-dimensional knowledge-saturation manifold. We prove five
+  according to a 6-dimensional knowledge state space. We prove five
   theorems: saturation equilibrium, reliable incorporation, zero-forgetting,
   balanced growth, and plexus connectivity convergence.
 keywords:

@@ -1,7 +1,7 @@
 # Berna R5
 
 **DNA-Kernel Plexus: A Bio-Inspired Architecture for Growing,
-Self-Correcting Language Models with Proven Zero-Forgetting**
+Self-Correcting Language Models with Bounded Forgetting**
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22998311.svg)](https://doi.org/10.5281/zenodo.22998311)
 [![License: Berna Research](https://img.shields.io/badge/License-Berna%20Research%20v1.0-blue.svg)](LICENSE)
@@ -79,17 +79,17 @@ Run all experiments:
     |-- scripts/           Upload, utilities
     +-- README.md          This file
 
-## The Zero-Error Creed
+## The Fail-Closed Integrity Invariant
 
 Any violation of a declared invariant triggers FAIL_CLOSED.
 There are no silent failures. This is a runtime guarantee,
-not a mathematical claim. See docs/zero_error_creed.md.
+not a mathematical claim. See docs/fail_closed_integrity.md.
 
 ## Documentation
 
 - Concept: docs/00_concept.md
 - Deployment: docs/03_deployment.md
-- Creed: docs/zero_error_creed.md
+- Creed: docs/fail_closed_integrity.md
 - Theories: theory/01_saturation.md through theory/05_neural_connectivity.md
 - Proofs: theory/proofs/T1_*.md through T5_*.md
 - Paper: paper/00_outline.md through paper/06_*.md
@@ -116,7 +116,7 @@ not a mathematical claim. See docs/zero_error_creed.md.
     @article{berna2026r5,
       title={DNA-Kernel Plexus: A Bio-Inspired Architecture for
              Growing, Self-Correcting Language Models with
-             Proven Zero-Forgetting},
+             Bounded Forgetting},
       author={Berna Labs},
       journal={arXiv preprint},
       year={2026}

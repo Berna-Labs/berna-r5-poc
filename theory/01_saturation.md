@@ -124,6 +124,6 @@ static. PAC-Bayes: static. This work: 6D dynamic manifold.
 
 ## 11. Summary
 
-Knowledge = point in 6D manifold. Saturation = weighted norm.
+Knowledge = point in 6D knowledge state space. Saturation = weighted norm.
 E (encompassment) is the most demanding dimension and must be
 preserved during splits.

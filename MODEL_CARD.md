@@ -20,13 +20,13 @@ library_name: pytorch
 # Berna R5
 
 **DNA-Kernel Plexus: A Bio-Inspired Architecture for Growing,
-Self-Correcting Language Models with Proven Zero-Forgetting**
+Self-Correcting Language Models with Bounded Forgetting**
 
 ## Model Description
 
 Berna R5 is a from-scratch language model architecture built on
 dynamic knowledge cells that are born, split, and interconnect
-according to a 6-dimensional knowledge-saturation manifold.
+according to a 6-dimensional knowledge state space.
 
 This is the **50M-parameter Proof of Concept (PoC)** release,
 used to validate five theoretical results before scaling to 1.5B.
@@ -99,7 +99,7 @@ Five theorems validated on PoC (see paper):
 - Multi-node federation untested.
 - 100-chromosome design not empirically optimized.
 
-## The Zero-Error Creed
+## The Fail-Closed Integrity Invariant
 
 Any violation of a declared invariant triggers FAIL_CLOSED.
 There are no silent failures. This is a runtime guarantee,
@@ -112,7 +112,7 @@ If you use Berna R5 in your research, please cite:
     @misc{muhammed2026berna,
       title={DNA-Kernel Plexus: A Bio-Inspired Architecture for
              Growing, Self-Correcting Language Models with
-             Proven Zero-Forgetting},
+             Bounded Forgetting},
       author={Muhammed, Mohammed Kamil},
       year={2026},
       publisher={Zenodo},

@@ -1,6 +1,6 @@
 # 5. Experiments
 
-We validate all five theorems on a 50M-parameter PoC.
+We validate the theoretical results on a 50M-parameter PoC.
 All experiments run on CPU or a single RTX 5090.
 
 ## 5.1 Setup

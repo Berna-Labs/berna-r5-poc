@@ -1,8 +1,14 @@
 # 4. Theory
 
-We state five theorems with complete proofs. Each proof is
-reproduced in Appendix A. Here we give the statement, the
-key lemma, and the intuition.
+We present results in three categories:
+
+- **2 Mathematical Theorems** (T1, T2): full proofs.
+- **2 Design Invariants** (I1, I2): enforced by system design.
+- **1 Proposition + 2 Hypotheses** (P1, H1, H2): partial
+  results and empirical claims.
+
+This classification is conservative. Not every result is a
+theorem in the strict mathematical sense.
 
 ## 4.1 Theorem 1: Saturation Equilibrium (6D)
 
@@ -151,3 +157,38 @@ Section 5 reports experiments that attempt such falsification.
     T3 Zero-Forgetting   | F_j <= 1e-6      | forgetting monitor
     T4 Balanced Growth   | N* <= Cap/fp     | N(t) bound
     T5 Connectivity      | rho < 1          | weight convergence
+
+
+## 4.9 Classification Summary
+
+| ID | Type | Statement | Status |
+|---|---|---|---|
+| **T1** | Theorem | Plexus connectivity convergence (LTI) | Proven |
+| **T2** | Theorem | Balanced growth equilibrium | Proven |
+| **I1** | Invariant | Transactional incorporation consistency | Design-enforced |
+| **I2** | Invariant | Protected retention under isolation | Design-enforced |
+| **P1** | Proposition | Saturation state dynamics | Partial proof |
+| **H1** | Hypothesis | Saturation-triggered split reduces loss | Empirical |
+| **H2** | Hypothesis | Zero-forgetting on continual tasks | Empirical |
+
+**Note on terminology:** we reserve "Theorem" for results with
+complete mathematical proofs. "Invariant" denotes a property
+enforced by system design (verifiable by code inspection, not
+by proof). "Hypothesis" denotes an empirically testable claim.
+
+## 4.10 What is NOT Proven
+
+To be explicit about what this paper does NOT establish:
+
+- **H1 is not proven.** The causal chain from saturation to
+  loss decrease is not derived from first principles.
+- **H2 is not proven.** We simulate zero-forgetting under
+  isolation, but have not tested on real continual-learning
+  benchmarks at scale.
+- **S* = 0.85 is not derived.** It is empirically tuned.
+- **100 chromosomes is not optimal.** It is a structured
+  design prior.
+- **6D state space is a modeling choice.** Other
+  dimensionalities not explored.
+- **Scale behavior is unknown.** Results at 50M may not hold
+  at 1.5B.

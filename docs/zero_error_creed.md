@@ -1,4 +1,4 @@
-# The Zero-Error Creed
+# The Fail-Closed Integrity Invariant
 
 ## Definition
 The Zero-Error Invariant is a runtime guarantee, not a

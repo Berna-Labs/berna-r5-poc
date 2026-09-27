@@ -24,7 +24,7 @@
 % ===== Title =====
 \title{\textbf{DNA-Kernel Plexus: A Bio-Inspired Architecture\\
 for Growing, Self-Correcting Language Models\\
-with Proven Zero-Forgetting}}
+with Bounded Forgetting}}
 
 \author{
     Mohammed Kamil Muhammed\\
@@ -46,11 +46,7 @@ split, and interconnect according to a 6-dimensional
 knowledge-saturation manifold. Unlike Mixture-of-Experts, our
 cells are not fixed at initialization; they grow in response
 to knowledge saturation and interconnect via a co-activation
-plexus. We prove five theorems: (1) saturation equilibrium in
-6D manifold space; (2) reliable mutation via federation
-incorporation; (3) zero-forgetting ($F_j \leq 10^{-6}$);
-(4) balanced growth equilibrium; (5) plexus connectivity
-convergence. We validate each theorem empirically on a
+plexus. We present two mathematical theorems (plexus connectivity convergence and balanced growth equilibrium), two design invariants (transactional incorporation and protected retention), and two empirical hypotheses (saturation-triggered splitting and zero-forgetting on continual tasks). We validate each theorem empirically on a
 50M-parameter Proof-of-Concept trained on 800M tokens,
 comparing against Transformer, MoE, EWC, and PackNet
 baselines. Berna R5 achieves competitive loss while reducing
@@ -126,7 +122,7 @@ failures simultaneously. Our contributions are:
     interconnect via a co-activation plexus. A
     100-chromosome DNA Kernel regulates cell behavior.
 
-    \item \textbf{Theory.} Five theorems with complete proofs:
+    \item \textbf{Theory.} Two theorems, two invariants, and empirical claims:
     (T1) Saturation Equilibrium with $S^* = 0.85$; (T2) Reliable
     Incorporation with $\epsilon_{\text{neg}} = 10^{-6}$;
     (T3) Zero-Forgetting with $F_j \leq 10^{-6}$; (T4) Balanced
@@ -145,7 +141,7 @@ failures simultaneously. Our contributions are:
 We make no claim of SOTA on any benchmark. Our model is 50M
 parameters, far smaller than production LLMs. We compare
 against 50M baselines, not GPT-4-class systems. We make no
-claim of theoretical completeness: all five theorems rest on
+claim of theoretical completeness: all these results rest on
 explicitly stated assumptions. Counterexamples are documented
 in each proof.
 
@@ -153,7 +149,7 @@ in each proof.
 
 Section~\ref{sec:related} reviews related work.
 Section~\ref{sec:arch} describes the architecture.
-Section~\ref{sec:theory} states the five theorems.
+Section~\ref{sec:theory} states the these results.
 Section~\ref{sec:exp} presents the experiments.
 Section~\ref{sec:disc} discusses findings.
 Section~\ref{sec:concl} concludes.
@@ -282,8 +278,7 @@ There are no silent failures.
 \section{Theory}
 \label{sec:theory}
 
-We state five theorems. Complete proofs appear in the
-supplementary material \cite{berna2026proofs}.
+We present results in three categories: two mathematical theorems (full proofs), two design invariants (enforced by system design), and one proposition plus two empirical hypotheses. Complete proofs and design rationale appear in the supplementary material \cite{berna2026proofs}.
 
 \subsection{Theorem 1: Saturation Equilibrium (6D)}
 
@@ -362,7 +357,7 @@ $\rho < 1$.
 
 \begin{table}[h]
 \centering
-\caption{Theorems and constants.}
+\caption{Results and constants.}
 \label{tab:theorems}
 \begin{tabular}{lll}
 \hline
@@ -380,7 +375,7 @@ T5 Connectivity & $\rho < 1$ & weight convergence \\
 \section{Experiments}
 \label{sec:exp}
 
-We validate all five theorems on a 50M-parameter PoC trained
+We validate all these results on a 50M-parameter PoC trained
 on 800M tokens (WikiText-103, The Stack, OpenWebMath).
 
 \subsection{Setup}
@@ -437,7 +432,7 @@ Exp 6 Plexus & convergence & True & Yes \\
 \section{Discussion}
 \label{sec:disc}
 
-Our experiments validate five theorems on a 50M-scale PoC.
+Our experiments validate these results on a 50M-scale PoC.
 Saturation is stable, growth is bounded, incorporation is
 safe, forgetting is zero, and plexus converges.
 
@@ -478,12 +473,12 @@ None observed in the PoC.
 
 We presented Berna R5, an architecture for language models
 that grow, correct locally, and never forget. Grounded in
-five theorems with complete proofs, validated on a
+two theorems with complete proofs, two design invariants, and three empirical claims, validated on a
 50M-parameter PoC across seven experiments.
 
-Core ideas: knowledge as a 6D manifold; cells that are born,
+Core ideas: knowledge as a 6D knowledge state space; cells that are born,
 split, die; a 100-chromosome DNA Kernel; a plexus of dynamic
-edges; a federation with SQL lineage; and a Zero-Error Creed.
+edges; a federation with SQL lineage; and a Fail-Closed Integrity Invariant.
 
 All code, proofs, and configurations are released at
 \url{https://github.com/Berna-Labs/berna-r5-poc}.

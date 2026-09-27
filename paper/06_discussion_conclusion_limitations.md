@@ -2,7 +2,7 @@
 
 ## 6.1 Key Findings
 
-Our experiments validate five theorems on a 50M-scale PoC:
+Our experiments validate the theoretical results on a 50M-scale PoC:
 
 1. **Saturation is stable.** S converges to ~0.90, within
    0.05 of the theoretical S* = 0.85.
@@ -84,7 +84,7 @@ This section discusses what the PoC shows. It does NOT claim:
 
 - The architecture scales to 1.5B without new challenges.
 - The 100-chromosome design is optimal.
-- The 6D manifold is the only useful choice.
+- The 6D knowledge state space is the only useful choice.
 - The constants (S*, tau_div, etc.) are universal.
 
 Those claims are deferred to future work.
@@ -95,17 +95,17 @@ Those claims are deferred to future work.
 
 We presented Berna R5, an architecture for language models
 that grow, correct locally, and never forget. The
-architecture is grounded in five theorems with complete
+architecture is grounded in two theorems with complete proofs, two design invariants, and empirical hypotheses
 proofs, and validated on a 50M-parameter PoC across seven
 experiments.
 
 The core ideas are:
-- **Knowledge as a 6D manifold** (L, W, H, D, T, E).
+- **Knowledge as a 6D knowledge state space** (L, W, H, D, T, E).
 - **Cells that are born, split, die** based on saturation.
 - **A DNA Kernel** of 100 chromosomes regulating cell behavior.
 - **A plexus** of dynamic edges that converge to a fixed point.
 - **A federation** of base + specialists with SQL lineage.
-- **A Zero-Error Creed** that guarantees no silent failures.
+- **A Fail-Closed Integrity Invariant** that guarantees no silent failures.
 
 The empirical results are:
 - Saturation converges to S* within 0.05.
@@ -221,7 +221,7 @@ interruptions. Real power-loss recovery is future work.
 - Falsifiability: any theorem can be refuted by a single
   counterexample.
 
-## 8.7 The Zero-Error Creed
+## 8.7 The Fail-Closed Integrity Invariant
 
 The Zero-Error Invariant is a runtime guarantee: any
 violation of a declared invariant triggers FAIL_CLOSED.

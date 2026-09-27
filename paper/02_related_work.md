@@ -116,7 +116,66 @@ Berna R5 differs: specialists are descended from the same
 base, share the same tokenizer and vocabulary layout, and
 communicate via a SQL registry with cryptographic keys.
 
-## 2.7 The Gap
+
+
+## 2.7 Model Editing
+
+A separate line of work addresses **localized correction** of
+LLM behavior without retraining:
+
+- **ROME** (Meng et al., 2022): Rank-One Model Editing.
+  Modifies specific factual associations by editing MLP weights.
+- **MEMIT** (Meng et al., 2023): Mass-Editing Memory in a
+  Transformer. Scales ROME to thousands of edits.
+- **MEND** (Mitchell et al., 2022): Model Editor Networks with
+  Gradient Decomposition.
+- **SERAC** (Mitchell et al., 2022): Semi-parametric editing
+  with a memory of edits.
+
+**Key limitation:** these methods edit *existing* parameters.
+They do not grow new capacity and do not provide structural
+growth. They also do not address continual learning across
+many domains.
+
+Berna R5 differs: localized correction is achieved through
+**new cells** (birth) rather than editing old ones. Old cells
+remain frozen. This makes correction non-destructive by design.
+
+## 2.8 Dynamic Neural Networks
+
+Prior work on dynamic architectures:
+
+- **DEN** (Yoon et al., 2018): Dynamically Expandable Networks.
+  Grows capacity during continual learning via selective
+  retraining and splitting. Closest to Berna R5.
+- **Net2Net** (Chen et al., 2016): Widens or deepens networks
+  via function-preserving transformations.
+- **Progressive Nets** (Rusu et al., 2016): New columns per
+  task, no modification of old columns.
+
+**Key limitation:** DEN's growth is triggered by loss or
+validation metrics, not by knowledge saturation. No prior
+dynamic-network method uses a 6-dimensional knowledge state
+space or a DNA-like regulatory layer.
+
+Berna R5 differs: growth is triggered by saturation
+(Proposition 1), and the DNA Kernel provides a structured
+prior for cell regulation.
+
+## 2.9 Neural Cellular Automata
+
+**NCA** (Mordvintsev et al., 2020): small neural networks that
+grow, self-organize, and regenerate after damage. Each cell
+communicates with local neighbors only.
+
+**Key limitation:** NCA operates on 2D spatial grids. It has
+not been applied to language modeling or knowledge structure.
+
+Berna R5 differs: transfers the self-organizing principle to
+**knowledge capacity** rather than spatial morphology. Cells
+represent knowledge domains, not image patches.
+
+## 2.10 The Gap
 
 | Area | Growth? | Zero-Forgetting? | Federation? | Proven? |
 |---|---|---|---|---|
