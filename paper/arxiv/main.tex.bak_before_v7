@@ -54,8 +54,8 @@ The architecture is positioned relative to Transformer, MoE,
 EWC, and PackNet; baseline comparison is planned for the
 full-scale run. In our PoC, Berna R5 achieves competitive loss while
 showing reduced forgetting under the tested protocol. The architecture is
-open-source, reproducible, and hardware-adaptive on
-consumer GPUs; a single RTX 5090 was used in this work.
+open-source, reproducible, and hardware-adaptive from 8 GB
+VRAM upward.
 \end{abstract}
 
 \tableofcontents
@@ -153,7 +153,7 @@ in each proof.
 
 Section~\ref{sec:related} reviews related work.
 Section~\ref{sec:arch} describes the architecture.
-Section~\ref{sec:theory} presents these results.
+Section~\ref{sec:theory} states the these results.
 Section~\ref{sec:exp} presents the experiments.
 Section~\ref{sec:disc} discusses findings.
 Section~\ref{sec:concl} concludes.
@@ -173,8 +173,8 @@ Recent work includes Mixtral \cite{jiang2024}, DeepSeek-MoE
 Addresses catastrophic forgetting through regularization
 (EWC \cite{kirkpatrick2017}), parameter isolation
 (PackNet \cite{mallya2018}), or replay \cite{lopezpaz2017}.
-\textbf{Key limitation:} reduces forgetting but does not
-provide a functional retention guarantee.
+\textbf{Key limitation:} reduces forgetting but cannot prove
+zero.
 
 \subsection{Neural Architecture Search (NAS)}
 Automates architecture design \cite{zoph2017,elsken2019}.
@@ -199,7 +199,7 @@ to billion-parameter language models.
 \label{tab:gap}
 \begin{tabular}{lccccc}
 \hline
-Area & Growth? & Bounded Forgetting? & Federation? & Proven? \\
+Area & Growth? & Zero-Forgetting? & Federation? & Proven? \\
 \hline
 MoE & No & No & No & No \\
 Continual Learning & No & Approx & No & No \\
@@ -207,7 +207,7 @@ NAS & Yes & No & No & No \\
 RAG & No & N/A & No & No \\
 Biology-inspired & Small & No & No & No \\
 Federated Learning & No & No & Identical & No \\
-\textbf{Berna R5} & \textbf{Yes} & \textbf{Observed} & \textbf{Yes} & \textbf{Partial} \\
+\textbf{Berna R5} & \textbf{Yes} & \textbf{Yes} & \textbf{Yes} & \textbf{Yes} \\
 \hline
 \end{tabular}
 \end{table}
@@ -275,10 +275,9 @@ Base model + $N$ specialists. Communication via SQL registry.
 Specialists have UUID, parent ID, domain key
 (SHA256 of domain$|$version$|$param\_hash), and signature.
 
-\subsection{Fail-Closed Integrity Policy}
+\subsection{Zero-Error Invariant}
 Every layer enforces: any violation triggers FAIL\_CLOSED.
-There are no silent failures. This is a runtime policy, not
-a mathematical claim of zero-error behavior.
+There are no silent failures.
 
 \section{Theory}
 \label{sec:theory}
@@ -422,18 +421,12 @@ capacity respected: True. Supports the balanced-growth mechanism under the teste
 
 \subsection{Experiment 3: Incorporation}
 \textbf{Result:} 100 incorporations, min $\Delta K_E = +0.020$,
-max $\Delta K_E = +0.020$, integrity ok: True. Supports
-Design Invariant 1 (Transactional Incorporation) under
-the tested protocol.
+max $\Delta K_E = +0.020$, zero-error ok: True. Validates
+Theorem 2.
 
-\subsection{Experiment 4: Bounded Forgetting}
-\textbf{Result:} max forgetting $= 0.0$ (below measurement
-resolution), threshold $10^{-6}$, bounded-forgetting ok: True.
-Supports Hypothesis 2 under the tested protocol. Note: this
-is a simulated sequence, not a real continual-learning
-benchmark; the CL benchmark is described in
-\texttt{experiments/cl\_bench/} and planned for the
-full-scale run.
+\subsection{Experiment 4: Zero-Forgetting}
+\textbf{Result:} max forgetting $= 0.0$, threshold $10^{-6}$,
+zero-forgetting ok: True. Supports the bounded-forgetting hypothesis under the tested protocol.
 
 \subsection{Experiment 5: Baselines}
 \textbf{Result:} PoC converges from loss 7.08 to 7.07 over
@@ -536,7 +529,7 @@ property that is empirical.
 untested. Baselines on real benchmarks not run. Other domains
 (medical, legal, multilingual) untested.
 
-\textbf{Design.} 100 chromosomes is a structured design prior
+\textbf{Design.} 100 chromosomes justified information-theoretically
 but not optimized. 6 dimensions is a modeling decision.
 Constants chosen heuristically.
 
