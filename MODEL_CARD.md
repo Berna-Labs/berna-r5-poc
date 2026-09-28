@@ -18,7 +18,7 @@ library_name: pytorch
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22998311.svg)](https://doi.org/10.5281/zenodo.22998311)
 [![ORCID](https://img.shields.io/badge/ORCID-0009-0002-5866-8815-A6CE39?logo=orcid)](https://orcid.org/0009-0002-5866-8815)
 [![Google Scholar](https://img.shields.io/badge/Google%20Scholar-3TVehbAAAAAJ-4285F4?logo=googlescholar)](https://scholar.google.com/citations?user=3TVehbAAAAAJ)
-[![Latest](https://img.shields.io/badge/Zenodo-v6.0-blue)](https://zenodo.org/records/23002131)
+[![Latest](https://img.shields.io/badge/Zenodo-v7.0-blue)](https://zenodo.org/records/23014665)
 
 # Berna R5
 

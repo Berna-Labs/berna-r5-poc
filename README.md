@@ -4,7 +4,7 @@
 Self-Correcting Language Models with Bounded Forgetting**
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22998311.svg)](https://doi.org/10.5281/zenodo.22998311)
-[![Latest](https://img.shields.io/badge/Zenodo-v6.0-blue)](https://zenodo.org/records/23002131)
+[![Latest](https://img.shields.io/badge/Zenodo-v7.0-blue)](https://zenodo.org/records/23014665)
 [![License: Berna Research](https://img.shields.io/badge/License-Berna%20Research%20v1.0-blue.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-155%20passed-brightgreen.svg)]()
 [![ORCID](https://img.shields.io/badge/ORCID-0009-0002-5866-8815-A6CE39?logo=orcid)](https://orcid.org/0009-0002-5866-8815)

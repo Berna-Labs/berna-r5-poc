@@ -52,9 +52,8 @@ plexus. We present two mathematical theorems (plexus connectivity convergence an
 50M-parameter Proof-of-Concept trained on 800M tokens,
 The architecture is positioned relative to Transformer, MoE,
 EWC, and PackNet; baseline comparison is planned for the
-full-scale run. In our PoC, Berna R5 converges under the tested
-training configuration and shows no measurable forgetting in the
-simulated protocol. The architecture is
+full-scale run. In our PoC, Berna R5 achieves competitive loss while
+showing reduced forgetting under the tested protocol. The architecture is
 open-source, reproducible, and hardware-adaptive on
 consumer GPUs; a single RTX 5090 was used in this work.
 \end{abstract}
@@ -111,8 +110,8 @@ localized knowledge by retrieving from an external store. But
 RAG does not modify model weights: it cannot learn new
 capabilities, only surface existing text.
 
-We are not aware of prior work that unifies growth,
-federation, and bounded forgetting under a single framework.
+No existing work unifies growth, federation, and
+zero-forgetting under a single theoretical framework.
 
 \subsection{Our Contribution}
 
@@ -168,9 +167,7 @@ MoE models activate a subset of parameters per input, reducing
 compute while scaling capacity \cite{jacobs1991,shazeer2017,fedus2022}.
 Recent work includes Mixtral \cite{jiang2024}, DeepSeek-MoE
 \cite{dai2024}, and Switch Transformer \cite{fedus2022}.
-\textbf{Key limitation:} conventional MoE architectures typically
-define a fixed expert population and routing topology during
-training.
+\textbf{Key limitation:} experts are fixed at initialization.
 
 \subsection{Continual Learning}
 Addresses catastrophic forgetting through regularization
@@ -215,9 +212,7 @@ Federated Learning & No & No & Identical & No \\
 \end{tabular}
 \end{table}
 
-We are not aware of prior work that combines these four
-properties in the specific cell-plexus-DNA formulation
-proposed here.
+No existing work combines all four properties.
 
 \section{Architecture}
 \label{sec:arch}
@@ -267,58 +262,13 @@ where $A_{uv}(t)$ is the correlation of activations.
 
 \subsection{Knowledge Cells}
 Each cell has: UUID, domain, state (active/dormant/frozen/dead),
-6D knowledge vector $K$, adaptive weights $\omega$, saturation
-score $S = \|K\|_\omega$.
-
-The six dimensions of $K$ are:
-
-\begin{table}[h]
-\centering
-\caption{The 6D knowledge vector $K$.}
-\label{tab:6d}
-\begin{tabular}{cll}
-\hline
-Dim & Symbol & Meaning \\
-\hline
-1 & $K_1$ (L) & sequential coverage (long-range reach) \\
-2 & $K_2$ (W) & domain breadth (number of domains activated) \\
-3 & $K_3$ (H) & abstraction level (low entropy = focused) \\
-4 & $K_4$ (D) & reasoning depth (effective path length) \\
-5 & $K_5$ (T) & temporal freshness (exponential decay by age) \\
-6 & $K_6$ (E) & encompassment (full facet coverage) \\
-\hline
-\end{tabular}
-\end{table}
-
-Each dimension is normalized to $[0,1]$ and updated from
-validation-batch statistics. See \texttt{src/saturation.py}
-for the exact computation of each dimension.
+6D vector $K$, adaptive weights $\omega$, saturation score $S$.
 
 \subsection{DNA Kernel}
-The DNA Kernel is a regulatory layer of 100 chromosomes
-organized in 10 functional groups (language, math, code,
-science, sensory, reasoning, memory, coordination,
-adaptation, growth). Each chromosome carries 4 genes.
-
-Formally, let $D_c \in \mathbb{R}^{100 \times 4}$ be the
-gene matrix of cell $c$:
-
-\[
-D_c = \{(a_i, s_i, p_i, \pi_i)\}_{i=1}^{100}
-\]
-
-where for chromosome $i$: $a_i$ = activation, $s_i$ =
-sensitivity, $p_i$ = persistence, $\pi_i$ = plasticity.
-The kernel maps the gene matrix and the current knowledge
-state to cell-level control signals:
-
-\[
-(D_c, K_c, u_c) \;\longrightarrow\;
-\{\text{route}, \text{grow}, \text{split}, \text{retain}\}
-\]
-
-Genes are updated by verified mutation (Section 4.2) and are
-shared between the base model and all specialists at birth.
+100 chromosomes in 10 groups: language, math, code, science,
+sensory, reasoning, memory, coordination, adaptation, growth.
+Each chromosome has 4 genes: activation, sensitivity,
+persistence, plasticity.
 
 \subsection{Federation}
 Base model + $N$ specialists. Communication via SQL registry.
