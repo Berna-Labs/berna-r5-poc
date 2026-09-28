@@ -1,0 +1,46 @@
+{
+  "0": {
+    "cell_domain": "math",
+    "mean_activation_by_domain": {
+      "math": 0.2599,
+      "code": 0.2591,
+      "text": 0.2596,
+      "science": 0.2581
+    },
+    "own_domain": 0.2599,
+    "max_other": 0.2596
+  },
+  "1": {
+    "cell_domain": "code",
+    "mean_activation_by_domain": {
+      "math": 0.2517,
+      "code": 0.2493,
+      "text": 0.2504,
+      "science": 0.252
+    },
+    "own_domain": 0.2493,
+    "max_other": 0.252
+  },
+  "2": {
+    "cell_domain": "text",
+    "mean_activation_by_domain": {
+      "math": 0.2426,
+      "code": 0.2445,
+      "text": 0.2432,
+      "science": 0.2435
+    },
+    "own_domain": 0.2432,
+    "max_other": 0.2445
+  },
+  "3": {
+    "cell_domain": "science",
+    "mean_activation_by_domain": {
+      "math": 0.2459,
+      "code": 0.2471,
+      "text": 0.2468,
+      "science": 0.2464
+    },
+    "own_domain": 0.2464,
+    "max_other": 0.2471
+  }
+}

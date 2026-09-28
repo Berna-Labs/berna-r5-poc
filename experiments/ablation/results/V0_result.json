@@ -1,0 +1,21 @@
+{
+  "variant": "V0",
+  "phase": 1,
+  "config": {
+    "cells": false,
+    "growth": false,
+    "plexus": false,
+    "dna": false,
+    "transactional": false
+  },
+  "params": 58249216,
+  "final_loss": 10.558131217956543,
+  "avg_loss_last_100": 10.538745355606078,
+  "min_loss": 10.517518043518066,
+  "elapsed_sec": 26.8,
+  "steps": 20,
+  "tokens": 40960,
+  "n_cells_final": 0,
+  "n_splits": 0,
+  "plexus_edges": 0
+}
