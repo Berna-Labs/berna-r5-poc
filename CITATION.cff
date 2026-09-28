@@ -18,7 +18,7 @@ identifiers:
     value: "10.5281/zenodo.22998311"
     description: "Concept DOI (always resolves to latest version)"
   - type: doi
-    value: "10.5281/zenodo.23014665"
+    value: "10.5281/zenodo.23015308"
     description: "Latest version DOI (v6.0, Bounded Forgetting, complete internal consistency)"
 abstract: >-
   We present Berna R5, a language model architecture in which knowledge is
